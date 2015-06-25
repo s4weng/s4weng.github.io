@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+  <meta charset="utf-8" />
+  <title>My Site (Console)</title>
+  <meta name="Website" content="Personal site."/>
+  <script src="termPlug/js/jquery-1.7.1.min.js"></script>
+  <script src="termPlug/js/jquery.mousewheel-min.js"></script>
+  <script src="termPlug/js/jquery.terminal-min.js"></script>
+  <script type="text/javascript" src="terminalObj.js"></script>
+  <link href="termPlug/css/jquery.terminal.css" rel="stylesheet"/>
+
+<script>
+
+//code from tilda-demo
+/*String.prototype.strip = function(char) {
+    return this.replace(new RegExp("^" + char + "*"), '').
+        replace(new RegExp(char + "*$"), '');
+}
+
+
+$.extend_if_has = function(desc, source, array) {
+    for (var i=array.length;i--;) {
+        if (typeof source[array[i]] != 'undefined') {
+            desc[array[i]] = source[array[i]];
+        }
+    }
+    return desc;
+};*/
+
+//more code from tilda-demo
+(function($) {
+    $.fn.tilda = function(eval, options) {
+        if ($('body').data('tilda')) {
+            return $('body').data('tilda').terminal;
+        }
+        this.addClass('tilda');
+        options = options || {};
+        eval = eval || function(command, term) {
+            term.echo("you don't set eval for tilda");
+        };
+        var settings = {
+            prompt: "guest@SteveWeng:~/" + currentDirectory.pathname + "$",
+            name: 'tilda',
+            height: $(window).height(),
+            enabled: false,
+            greetings: 'Press ` to switch to GUI version.',
+            keypress: function(e) {
+                if (e.which == 96) {
+                    return false;
+                }
+            }
+        };
+        if (options) {
+            $.extend(settings, options);
+        }
+        this.append('<div class="td"></div>');
+        var self = this;
+        self.terminal = this.find('.td').terminal(eval, settings);
+        var focus = false;
+        $(document.documentElement).keypress(function(e) {
+            if (e.which == 96) {
+                self.slideToggle(0);
+                self.terminal.focus(focus = !focus);
+                self.terminal.attr({
+                    scrollTop: self.terminal.attr("scrollHeight")
+                });
+            }
+        });
+        $('body').data('tilda', this);
+        return self;
+    };
+})(jQuery);
+
+//custom commands
+function cmds(command, terminal){
+
+    var input = command.split(" ");
+
+    if (input[0] == "ls"){
+
+        for (var i = 0; i < root.children.length; ++i){
+
+            terminal.echo(root.children[i].name);
+        }
+    }
+
+    else if (input[0] == "cat"){
+
+        terminal.echo("here are teh files mon");
+    }
+
+    else if (input[0] == "cd"){
+
+        if (currentDirectory == root){
+            terminal.echo("holld");
+        }
+    }
+
+    else if (input[0] == "help"){
+
+        terminal.echo("need la help?");
+    }
+
+    else {
+
+        terminal.echo("Invalid command.  Type \"help\" for help.");
+    }
+}
+
+var currentDirectory = root;
+
+jQuery(document).ready(function($) {
+
+    $('#tilda').tilda(cmds);
+});
+
+</script>
+</head>
+
+<body>
+    <div id="tilda"></div>
+    <h1>Base site here.</h1>
+</body>
+</html>
