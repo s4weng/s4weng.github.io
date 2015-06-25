@@ -4,26 +4,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <link rel="stylesheet" href="/main.css">
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="header row">
-          <div>
-               <ul class="nav nav-tabs"> 
-                   <li><a href="/index.html">Home</a></li>
-                   <li class="active"><a href="/blogIndex.html">Blog</a></li>
-                   <li><a href="/projects.html">Projects</a></li>
-              </ul>
-          </div>
-        </div>
 
+    {% include tabs.html %}
 
         <div class="row">
             <div class="jumbotron">
                 <div class="main">
                     <div class="row">
                         <div class="col-md-12">
+
                             {{ content }}
 
                         </div>  
