@@ -1,32 +1,48 @@
+var downloadAtWar = {
+
+	name: "DownloadAtWar",
+	type: "archive",
+	parent: [atWar],
+	children: [root]
+};
+
+var atWar = {
+
+	name: "AtWar",
+	type: "directory",
+	parent: [projects],
+	children: [downloadAtWar],
+	prompt: "guest@SteveWeng:~/Projects/AtWar$"
+};
+
 var home = {
 
 	name: "Home",
-	pathname: "Root/Home",
 	type: "directory",
 	parent: [root],
-	children: []
+	children: [downloadAtWar],
+	prompt: "guest@SteveWeng:~/Home$"
 };
 
 
 var posts = {
 
 	name: "Posts",
-	pathname: "Root/Posts",
 	type: "directory",
 	parent: [root],
-	children: []
+	children: [downloadAtWar],
+	prompt: "guest@SteveWeng:~/Posts$"
 };
 
 
 var projects = {
 
 	name: "Projects",
-	pathname: "Root/Projects",
 	type: "directory",
 	parent: [root],
-	children: [atWar]
+	children: [atWar],
+	prompt: "guest@SteveWeng:~/Projects$"
 };
-
 
 var root = {
 
@@ -34,22 +50,6 @@ var root = {
 	pathname: "Root",
 	type: "directory",
 	parent: [],
-	children: [home, posts, projects]
-};
-
-var atWar = {
-
-	name: "AtWar",
-	pathname: "Root/Projects/AtWar",
-	type: "directory",
-	parent: [projects],
-	children: [downloadAtWar]
-};
-
-var downloadAtWar = {
-
-	name: "DownloadAtWar",
-	type: "archive",
-	parent: [atWar],
-	children: []
+	children: [home, posts, projects],
+	prompt: "guest@SteveWeng:~$"
 };

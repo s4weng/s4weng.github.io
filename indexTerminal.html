@@ -14,7 +14,7 @@
 <script>
 
 //code from tilda-demo
-/*String.prototype.strip = function(char) {
+String.prototype.strip = function(char) {
     return this.replace(new RegExp("^" + char + "*"), '').
         replace(new RegExp(char + "*$"), '');
 }
@@ -27,7 +27,7 @@ $.extend_if_has = function(desc, source, array) {
         }
     }
     return desc;
-};*/
+};
 
 //more code from tilda-demo
 (function($) {
@@ -41,8 +41,8 @@ $.extend_if_has = function(desc, source, array) {
             term.echo("you don't set eval for tilda");
         };
         var settings = {
-            prompt: "guest@SteveWeng:~/" + currentDirectory.pathname + "$",
-            name: 'tilda',
+            prompt: "guest@SteveWeng:~$",
+            name: 'steveweng.com',
             height: $(window).height(),
             enabled: false,
             greetings: 'Press ` to switch to GUI version.',
@@ -77,12 +77,13 @@ $.extend_if_has = function(desc, source, array) {
 function cmds(command, terminal){
 
     var input = command.split(" ");
+    var valid = false;
 
     if (input[0] == "ls"){
 
-        for (var i = 0; i < root.children.length; ++i){
+        for (var i = 0; i < currentDirectory.children.length; ++i){
 
-            terminal.echo(root.children[i].name);
+            terminal.echo(currentDirectory.children[i].name);
         }
     }
 
@@ -91,11 +92,36 @@ function cmds(command, terminal){
         terminal.echo("here are teh files mon");
     }
 
-    else if (input[0] == "cd"){
+    else if (input[0] == "cd" && input.length > 1){
 
-        if (currentDirectory == root){
-            terminal.echo("holld");
+        if (input[1] == "~"){
+
+            valid = true;
+            currentDirectory = root;
         }
+
+        else if (input[1] == ".."){
+
+            valid = true;
+            currentDirectory = currentDirectory.parent;
+            terminal.pop();
+        }
+
+        else {
+
+            for (var i = 0; i < currentDirectory.children.length; ++i){
+
+                if (input[1] == currentDirectory.children[i].name && currentDirectory.children[i].type == "directory"){
+
+                    valid = true;
+                    currentDirectory = currentDirectory.children[i];
+                    terminal.push(cmds, currentDirectory);
+                }
+            }
+        }
+
+        if (!valid) terminal.echo("Command not found.  Type help for a list of commands!");
+
     }
 
     else if (input[0] == "help"){
