@@ -42,9 +42,12 @@ body {
 
 .nav-tabs img {
 
-    max-height: 20%;
-    max-width: 20%;
-    margin: 7px 0px 0px 7px;
+    margin: 10px 0px 0px 10px;
+}
+
+.nav-tabs img:hover {
+
+    opacity: 0.5;
 }
 
 .content {
