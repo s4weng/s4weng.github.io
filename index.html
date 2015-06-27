@@ -1,56 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	<link rel="stylesheet" href="main.css">
-</head>
+---
+layout: default
+---
+<script>
 
-<body>
-	<div class="container">
-  		<div class="header row">
-    		<div>
-        		<ul class="nav nav-tabs"> 
-	        		<li class="active"><a href="">Home</a></li>
-	        		<li><a href="blogIndex.html">Blog</a></li>
-	        		<li><a href="projects.html">Projects</a></li>
-       		    </ul>
-     		</div>
-  		</div>
-  		
-		<div class="row">
-			<div class="jumbotron">
+$(document).ready(function(){
+
+  $('#headerTabs li:eq(0) a').tab('show')
+});
+</script>
+
+			<div class="main">
+
 				<div class="row">
-					<div class="main">
-						<div class="row">
-	   						<div class="col-md-6">
-								<h1>Steve Weng</h1>
-								<br>
-								<div class="content">
-									<p>I am always either diversifying my skillset as a software engineer or improving my skill at using C++.</p>
-									<p>I believe an understanding of different fields often tend to complement each other, and as such can make a person a better programmer.  Plus, it's always fun to learn something new, especially when you've been working on the same topic for months.</p>
-									<p>Seriously though.  All things C++.  Always.  (I mean, it's a good core language and there are endless libraries to learn and play with!)</p>
-									<p>Check out what I'm currently working on through my <a href="projects.html">projects</a> page, and feel free to connect with me through: (To be added shortly)</p>
 
-								</div>
-							</div>
-							<div class="profileImg visible-lg col-md-6">
-	         					<img src="Images/mainHeader.jpg">
-	         					<br>
-	         					<p>This may or may not be a picture of me.  If not, one will be up soon; promise.</p>
-	      					</div>
-      					</div>
+	   				<div class="col-md-6">
+						<h1>Steve Weng</h1>
+						<br>
+						<div class="content">
+							<p>I am always either diversifying my skillset as a software engineer or improving my skill at using C++.</p>
+							<p>I believe an understanding of different fields often tend to complement each other, and as such can make a person a better programmer.  Plus, it's always fun to learn something new, especially when you've been working on the same topic for months.</p>
+							<p>Seriously though.  All things C++.  Always.  (I mean, it's a good core language and there are endless libraries to learn and play with!)</p>
+							<p>Check out what I'm currently working on through my <a href="projects.html">projects</a> page, and feel free to connect with me through: (To be added 	shortly)</p>
 
-						<div class="row">
-							<div class="contactLinks">
-								github/fb/email
-							</div>
 						</div>
-					</div>
+		   			</div>
+
+					<div class="profileImg visible-lg col-md-6">
+		         		<img src="Images/mainHeader.jpg">
+		      			<br>
+		       			<p>This may or may not be a picture of me.  If not, one will be up soon; promise.</p>
+		      		</div>
+		      		
+      		</div>
+
+			<div class="row">
+				<div class="contactLinks">
+					github/fb/email
 				</div>
 			</div>
-		</div>
-	</div>
-</body>
 
-</html>	
+		</div>
