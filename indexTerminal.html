@@ -98,13 +98,18 @@ function cmds(command, terminal){
 
             valid = true;
             currentDirectory = root;
+            terminal.push(cmds, currentDirectory);
         }
 
         else if (input[1] == ".."){
 
             valid = true;
-            currentDirectory = currentDirectory.parent;
-            terminal.pop();
+
+            if (currentDirectory != root){
+                
+                currentDirectory = currentDirectory.parent;
+                terminal.pop();
+            }
         }
 
         else {

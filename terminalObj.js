@@ -1,6 +1,6 @@
 var downloadAtWar = {
 
-	name: "DownloadAtWar",
+	name: "AtWar.zip",
 	type: "archive",
 	parent: [atWar],
 	children: [root]
