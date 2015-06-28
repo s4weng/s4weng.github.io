@@ -5,38 +5,86 @@ layout: default
 
 $(document).ready(function(){
 
-  $('#headerTabs li:eq(0) a').tab('show')
+	//home tab loads on default
+    $('#headerTabs li:eq(0) a').tab('show');
+	$(".tab2content").hide(0);
+	$(".tab3content").hide(0);
+});
+
+$(".tab1").click(function(){
+
+	$(".tab2content").hide(0);
+	$(".tab3content").hide(0);
+	$(".tab1content").show(0);
+    $('#headerTabs li:eq(0) a').tab('show');
+});
+
+$(".tab2").click(function(){
+
+	$(".tab1content").hide(0);
+	$(".tab3content").hide(0);
+	$(".tab2content").show(0);
+	$('#headerTabs li:eq(1) a').tab('show');
+});
+
+$(".tab3").click(function(){
+
+	$(".tab1content").hide(0);
+	$(".tab2content").hide(0);
+	$(".tab3content").show(0);
+	$('#headerTabs li:eq(2) a').tab('show');
 });
 </script>
 
-			<div class="main">
+<div class="main tab1content">
+	<div class="row">
+		<div class="col-md-6">
+			<h1>Steve Weng</h1>
+			<br>
+			<div class="content">
+				<p>I am always either diversifying my skillset as a software engineer or improving my skill at using C++.</p>
+				<p>I believe an understanding of different fields often tend to complement each other, and as such can make a person a better programmer.  Plus, it's always fun to learn something new, especially when you've been working on the same topic for months.</p>
+				<p>Check out what I'm currently working on through my <a href="projects.html">projects</a> page, and feel free to connect with me through: (To be added 	shortly)</p>
+			</div>
+		</div>
 
-				<div class="row">
+		<div class="profileImg visible-lg col-md-6">
+			<img src="Images/mainHeader.jpg">
+			<br>
+			<p>This may or may not be a picture of me.  If not, one will be up soon; promise.</p>
+		</div>
+	</div>
 
-	   				<div class="col-md-6">
-						<h1>Steve Weng</h1>
-						<br>
-						<div class="content">
-							<p>I am always either diversifying my skillset as a software engineer or improving my skill at using C++.</p>
-							<p>I believe an understanding of different fields often tend to complement each other, and as such can make a person a better programmer.  Plus, it's always fun to learn something new, especially when you've been working on the same topic for months.</p>
-							<p>Seriously though.  All things C++.  Always.  (I mean, it's a good core language and there are endless libraries to learn and play with!)</p>
-							<p>Check out what I'm currently working on through my <a href="projects.html">projects</a> page, and feel free to connect with me through: (To be added 	shortly)</p>
+	<div class="row">
+		<div class="contactLinks">
+		github/fb/email
+		</div>
+	</div>
+</div>
 
-						</div>
-		   			</div>
+<div class="blogIndex tab2content">
+  <ul>
+    {% for post in site.posts %}
+    <div>
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y: " }}</span>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </li>
+      </div>
+      </br>
+    {% endfor %}
+  </ul>
+</div>
 
-					<div class="profileImg visible-lg col-md-6">
-		         		<img src="Images/mainHeader.jpg">
-		      			<br>
-		       			<p>This may or may not be a picture of me.  If not, one will be up soon; promise.</p>
-		      		</div>
-		      		
-      		</div>
-
+<div class="Projects tab3content">
+	<div class="row">
+		<div class="main">
 			<div class="row">
-				<div class="contactLinks">
-					github/fb/email
+		   		<div class="col-md-12">
+					<h3>Projects</h3>
+					<p>Projects will be displayed here!</p>
 				</div>
 			</div>
-
 		</div>
+	</div>
+</div>
