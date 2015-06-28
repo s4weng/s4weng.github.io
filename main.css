@@ -42,7 +42,22 @@ body {
 
 .nav-tabs img {
 
-    margin: 10px 0px 0px 10px;
+    float: right;
+}
+
+#openTerminal {
+
+    margin: 8px 0px 0px 12px;
+}
+
+#facebook {
+
+    margin: 7px 0px 0px 12px;
+}
+
+#github {
+
+    margin: 7px 0px 0px 12px;
 }
 
 .nav-tabs img:hover {
