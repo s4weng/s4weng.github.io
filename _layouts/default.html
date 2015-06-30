@@ -47,7 +47,7 @@ $.extend_if_has = function(desc, source, array) {
             name: 'steveweng.com',
             height: $(window).height(),
             enabled: false,
-            greetings: 'Press ` to switch to GUI version.',
+            greetings: "Hi, I'm Steve.  Enjoy playing with this terminal!",
             keypress: function(e) {
                 if (e.which == 96) {
                     return false;
@@ -141,7 +141,7 @@ function cmds(command, terminal){
 
     else if (input[0] == "help"){
 
-        terminal.echo("need la help?");
+        terminal.echo(help);
     }
 
     else {

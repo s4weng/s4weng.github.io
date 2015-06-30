@@ -53,3 +53,12 @@ var root = {
 	children: [home, posts, projects],
 	prompt: "guest@SteveWeng:~$"
 };
+
+var help = "\n\
+Press ` at any time to exit to the GUI interface. \n\
+\n\
+Commands:\n\n\
+clear      -> Clear the screen of all text\n\
+help       -> Display the commands and other information.\n\
+ls (arg)   -> Lists the directory contents of arg\n\
+cat (arg)  -> Writes the content of arg to screen (text files only)\n";

@@ -1,0 +1,7 @@
+Press ` at any time to exit to the GUI interface.
+
+Commands:
+clear      -> Clear the screen of all text
+help       -> Display the commands and other information.
+ls (arg)   -> Lists the directory contents of arg
+cat (arg)  -> Writes the content of arg to screen (text files only)
