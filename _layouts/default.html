@@ -116,5 +116,35 @@ jQuery(document).ready(function($) {
             </div>
         </div>
     </div>
+
+<script>
+
+$(".tab1").click(function(){
+
+    $(".tab2content").hide(0);
+    $(".tab3content").hide(0);
+    $(".tab1content").show(0);
+    $('#headerTabs li:eq(0) a').tab('show');
+});
+
+$(".tab2").click(function(){
+
+    $(".tab1content").hide(0);
+    $(".tab3content").hide(0);
+    $(".tab2content").show(0);
+    $('#headerTabs li:eq(1) a').tab('show');
+});
+
+$(".tab3").click(function(){
+
+    $(".tab1content").hide(0);
+    $(".tab2content").hide(0);
+    $(".tab3content").show(0);
+    $('#headerTabs li:eq(2) a').tab('show');
+});
+
+    $('#headerTabs li:eq(0) a').tab('show');
+</script>
+
 </body>
 </html>

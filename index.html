@@ -1,40 +1,6 @@
 ---
 layout: default
 ---
-<script>
-
-$(function(){
-
-	//home tab loads on default
-    $('#headerTabs li:eq(0) a').tab('show');
-	$(".tab2content").hide(0);
-	$(".tab3content").hide(0);
-});
-
-$(".tab1").click(function(){
-
-	$(".tab2content").hide(0);
-	$(".tab3content").hide(0);
-	$(".tab1content").show(0);
-    $('#headerTabs li:eq(0) a').tab('show');
-});
-
-$(".tab2").click(function(){
-
-	$(".tab1content").hide(0);
-	$(".tab3content").hide(0);
-	$(".tab2content").show(0);
-	$('#headerTabs li:eq(1) a').tab('show');
-});
-
-$(".tab3").click(function(){
-
-	$(".tab1content").hide(0);
-	$(".tab2content").hide(0);
-	$(".tab3content").show(0);
-	$('#headerTabs li:eq(2) a').tab('show');
-});
-</script>
 
 <div class="main tab1content">
 	<div class="row">
@@ -44,7 +10,7 @@ $(".tab3").click(function(){
 			<div class="content">
 				<p>I am always either diversifying my skillset as a software engineer or improving my skill at using C++.</p>
 				<p>I believe an understanding of different fields often tend to complement each other, and as such can make a person a better programmer.  Plus, it's always fun to learn something new, especially when you've been working on the same topic for months.</p>
-				<p>Check out what I'm currently working on through my <button class="tab3">projects</button> page, and feel free to connect with me through: (To be added shortly)</p>
+				<p>Check out what I'm currently working on through my <button class="tab3">projects</button> page, and feel free to connect with me!</p>
 			</div>
 		</div>
 
@@ -83,3 +49,4 @@ $(".tab3").click(function(){
 		</div>
 	</div>
 </div>
+
