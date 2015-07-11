@@ -3,7 +3,8 @@
 <head>
 
   <meta charset="utf-8" />
-  <title>My Site (Console)</title>
+  <title>Steve Weng</title>
+  <link rel="icon" type="image/png" href="Images/Initials.png" sizes="32x32" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="/termPlug/css/jquery.terminal.css" rel="stylesheet"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -119,29 +120,51 @@ jQuery(document).ready(function($) {
 
 <script>
 
-$(".tab1").click(function(){
+function checkURL() {
 
+    if (window.location.pathname != "/") window.location = "http://localhost:4000";
+}
+
+function hideAll() {
+
+    $(".tab1content").hide(0);
     $(".tab2content").hide(0);
     $(".tab3content").hide(0);
+    $(".resumeContent").hide(0);
+}
+
+$(".tab1").click(function(){
+
+    checkURL();
+    hideAll();
     $(".tab1content").show(0);
     $('#headerTabs li:eq(0) a').tab('show');
 });
 
 $(".tab2").click(function(){
 
-    $(".tab1content").hide(0);
-    $(".tab3content").hide(0);
+    checkURL();
+    hideAll();
     $(".tab2content").show(0);
     $('#headerTabs li:eq(1) a').tab('show');
 });
 
 $(".tab3").click(function(){
 
-    $(".tab1content").hide(0);
-    $(".tab2content").hide(0);
+    checkURL(); 
+    hideAll();
     $(".tab3content").show(0);
     $('#headerTabs li:eq(2) a').tab('show');
 });
+
+$("#resume").click(function(){
+
+    checkURL(); 
+    hideAll();
+    $(".resumeContent").show(0);
+});
+
+
 </script>
 
 </body>

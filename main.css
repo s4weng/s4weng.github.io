@@ -76,6 +76,16 @@ body {
 	font-size: 111%;
 }
 
+.tab2content p {
+
+    font-size: 111%;
+}
+
+.tab3content p {
+
+    font-size: 111%;
+}
+
 .blogIndex ul {
 
     list-style-type: none;
@@ -100,6 +110,11 @@ button {
 }
 
 .tab3content {
+
+    display: none;
+}
+
+.resumeContent {
 
     display: none;
 }
