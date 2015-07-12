@@ -71,21 +71,21 @@ function cmds(command, terminal){
 
         else {
 
-            var directories = parsePaths(input[1]);
+            var directories = parsePaths(input[1]); //separate path by '/'
+            var newDirectories = [currentDirectory]; //last element will be the current/latest valid directory
             var count = 0;
             var i = 0;
+
 
             while (i < currentDirectory.children.length){
 
                 if (count >= directories.length) break;
 
                 //found directory
-                if (directories[count] == currentDirectory.children[i].name && currentDirectory.children[i].type == "directory"){
+                if (directories[count] == newDirectories[newDirectories.length-1].children[i].name && newDirectories[newDirectories.length-1].children[i].type == "directory"){
 
                     valid = true;
-                    prevDirectory = currentDirectory;
-                    currentDirectory = currentDirectory.children[i];
-                    terminal.push(cmds, currentDirectory);
+                    newDirectories.push(newDirectories[newDirectories.length-1].children[i]);
                     ++count;
                     i = -1; //look for next directory
                 }
@@ -93,6 +93,17 @@ function cmds(command, terminal){
                 else valid = false;
 
                 ++i;
+            }
+
+            //path was valid, push them on one by one
+            if (valid){
+
+                for (var i = 1; i < newDirectories.length; ++i){
+
+                    prevDirectory = newDirectories[i-1];
+                    currentDirectory = newDirectories[i];
+                    terminal.push(cmds, currentDirectory);
+                }
             }
         }
 
