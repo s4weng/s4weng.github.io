@@ -3,6 +3,13 @@ function download(file){
     window.location = file;
 }
 
+//separate input by '/'
+function parsePaths(input){
+
+    var directories = input.split("/");
+    return directories;
+}
+
 //custom commands
 function cmds(command, terminal){
 
@@ -64,15 +71,28 @@ function cmds(command, terminal){
 
         else {
 
-            for (var i = 0; i < currentDirectory.children.length; ++i){
+            var directories = parsePaths(input[1]);
+            var count = 0;
+            var i = 0;
 
-                if (input[1] == currentDirectory.children[i].name && currentDirectory.children[i].type == "directory"){
+            while (i < currentDirectory.children.length){
+
+                if (count >= directories.length) break;
+
+                //found directory
+                if (directories[count] == currentDirectory.children[i].name && currentDirectory.children[i].type == "directory"){
 
                     valid = true;
                     prevDirectory = currentDirectory;
                     currentDirectory = currentDirectory.children[i];
-                    terminal.push(cmds, this);
+                    terminal.push(cmds, currentDirectory);
+                    ++count;
+                    i = -1; //look for next directory
                 }
+
+                else valid = false;
+
+                ++i;
             }
         }
 
