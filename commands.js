@@ -71,7 +71,6 @@ function cmds(command, terminal){
 
         else {
 
-            var directories = parsePaths(input[1]); //separate path by '/'
             var newDirectories = [currentDirectory]; //last element will be the current/latest valid directory
             var count = 0;
             var i = 0;
