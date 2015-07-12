@@ -1,3 +1,8 @@
+function download(file){
+
+    window.location = file;
+}
+
 //custom commands
 function cmds(command, terminal){
 
@@ -14,7 +19,23 @@ function cmds(command, terminal){
 
     else if (input[0] == "cat"){
 
-        terminal.echo("here are teh files mon");
+        terminal.echo("Nothing here yet!");
+    }
+
+    else if (input[0] == "download"){
+
+        for (var i = 0; i < currentDirectory.children.length; ++i){
+
+            if (input[1] == currentDirectory.children[i].name && currentDirectory.children[i].type == "archive"){
+
+                valid = true;
+                terminal.echo("Downloading " + input[1] + "...");
+                download(downloadAtWar.link);
+            }
+        }
+
+        if (!valid) terminal.echo(input[1] + " is not a downloadable file.");
+
     }
 
     else if (input[0] == "cd" && input.length > 1){

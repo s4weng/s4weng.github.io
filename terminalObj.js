@@ -2,7 +2,8 @@ var downloadAtWar = {
 
 	name: "AtWar.zip",
 	type: "archive",
-	children: [root]
+	children: [root],
+	link: "https://github.com/s4weng/At-War/archive/master.zip"
 };
 
 var atWar = {
