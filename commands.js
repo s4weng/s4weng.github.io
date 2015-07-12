@@ -76,8 +76,7 @@ function cmds(command, terminal){
             var count = 0;
             var i = 0;
 
-
-            while (i < currentDirectory.children.length){
+            while (i < newDirectories[newDirectories.length-1].children.length){
 
                 if (count >= directories.length) break;
 
