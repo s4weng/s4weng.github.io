@@ -6,11 +6,20 @@ var downloadAtWar = {
 	link: "https://github.com/s4weng/At-War/archive/master.zip"
 };
 
+var descriptionAtWar = {
+
+	name: "Description.txt",
+	type: "text",
+	children: [root],
+	text: "\n\
+	At War is a pseudo-3D fantasy beat 'em up game I developed in C++.\n"
+};
+
 var atWar = {
 
 	name: "AtWar",
 	type: "directory",
-	children: [downloadAtWar],
+	children: [downloadAtWar, descriptionAtWar],
 	prompt: "guest@SteveWeng:~/Projects/AtWar$"
 };
 
@@ -53,7 +62,8 @@ var help = "\n\
 Press ` at any time to exit to the GUI interface. \n\
 \n\
 Commands:\n\n\
-clear      -> Clear the screen of all text\n\
+clear      -> Clear the screen of all text.\n\
 help       -> Display the commands and other information.\n\
-ls (arg)   -> Lists the directory contents of arg\n\
-cat (arg)  -> Writes the content of arg to screen (text files only)\n";
+ls (arg)   -> List the directory contents of arg.\n\
+cat (arg)  -> Write the content of arg to screen (text files only).\n\
+download (arg) -> Download arg (archive files only).\n";

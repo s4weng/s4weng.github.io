@@ -26,7 +26,11 @@ function cmds(command, terminal){
 
     else if (input[0] == "cat"){
 
-        terminal.echo("Nothing here yet!");
+        for (var i = 0; i < currentDirectory.children.length; ++i){
+
+            if (input[1] == currentDirectory.children[i].name && currentDirectory.children[i].type == "text")
+                terminal.echo(currentDirectory.children[i].text);
+        }
     }
 
     else if (input[0] == "download"){
@@ -71,6 +75,7 @@ function cmds(command, terminal){
 
         else {
 
+            var directories = parsePaths(input[1]);
             var newDirectories = [currentDirectory]; //last element will be the current/latest valid directory
             var count = 0;
             var i = 0;
