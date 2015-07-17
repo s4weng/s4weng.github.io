@@ -64,10 +64,10 @@ function cmds(command, terminal){
             valid = true;
 
             if (currentDirectory != root){
-                
+
+                prevDirectory = currentDirectory.parent;
                 currentDirectory = prevDirectory;
-                prevDirectory = root; //directories aren't more than three levels deep
-                terminal.pop();
+                terminal.push(cmds, currentDirectory);
             }
         }
 

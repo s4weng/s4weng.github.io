@@ -31,7 +31,6 @@ var home = {
 	prompt: "guest@SteveWeng:~/Home$"
 };
 
-
 var posts = {
 
 	name: "Posts",
@@ -39,7 +38,6 @@ var posts = {
 	children: [downloadAtWar],
 	prompt: "guest@SteveWeng:~/Posts$"
 };
-
 
 var projects = {
 
@@ -67,3 +65,11 @@ help       -> Display the commands and other information.\n\
 ls (arg)   -> List the directory contents of arg.\n\
 cat (arg)  -> Write the content of arg to screen (text files only).\n\
 download (arg) -> Download arg (archive files only).\n";
+
+downloadAtWar.parent = atWar;
+descriptionAtWar.parent = atWar;
+atWar.parent = projects;
+home.parent = root;
+posts.parent = root;
+projects.parent = root;
+root.parent = root;
