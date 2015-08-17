@@ -1,9 +1,45 @@
+var downloadTotalGains = {
+
+	name: "TotalGains.zip",
+	type: "archive",
+	children: [root],
+	link: "https://github.com/s4weng/totalGains/archive/master.zip"
+};
+
+var downloadDriver = {
+
+	name: "AutoDriver.zip",
+	type: "archive",
+	children: [root],
+	link: "https://github.com/s4weng/Autonomous-Racecar-Driver/archive/master.zip"
+};
+
 var downloadAtWar = {
 
 	name: "AtWar.zip",
 	type: "archive",
 	children: [root],
 	link: "https://github.com/s4weng/At-War/archive/master.zip"
+};
+
+var descriptionTotalGains = {
+
+	name: "Description.txt",
+	type: "text",
+	children: [root],
+	text: "\n\
+	TotalGains uses a weightlifter's max numbers to find weaknesses, and uses\n
+	that weakness with Prilepin's chart to create an optimal rep/set scheme.\n"
+};
+
+var descriptionDriver = {
+
+	name: "Description.txt",
+	type: "text",
+	children: [root],
+	text: "\n\
+	GTR 2 Autonomous Driver's name gives it all away; using an artificial neural network\n
+	I trained, the computer will drive a racecar around the track in GTR 2.\n"
 };
 
 var descriptionAtWar = {
@@ -13,6 +49,22 @@ var descriptionAtWar = {
 	children: [root],
 	text: "\n\
 	At War is a pseudo-3D fantasy beat 'em up game I developed in C++.\n"
+};
+
+var totalGains = {
+
+	name: "TotalGains"
+	type: "directory",
+	children: [downloadTotalGains, descriptionTotalGains],
+	prompt: "guest@SteveWeng:~/Projects/TotalGains",
+};
+
+var autoDriver = {
+
+	name: "AutonomousDriver"
+	type: "directory",
+	children: [downloadDriver, descriptionDriver],
+	prompt: "guest@SteveWeng:~/Projects/AutonomousDriver"
 };
 
 var atWar = {
