@@ -53,7 +53,7 @@ var descriptionAtWar = {
 
 var totalGains = {
 
-	name: "TotalGains"
+	name: "TotalGains",
 	type: "directory",
 	children: [downloadTotalGains, descriptionTotalGains],
 	prompt: "guest@SteveWeng:~/Projects/TotalGains",
@@ -61,7 +61,7 @@ var totalGains = {
 
 var autoDriver = {
 
-	name: "AutonomousDriver"
+	name: "AutonomousDriver",
 	type: "directory",
 	children: [downloadDriver, descriptionDriver],
 	prompt: "guest@SteveWeng:~/Projects/AutonomousDriver"
