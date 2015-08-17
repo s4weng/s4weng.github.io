@@ -118,7 +118,11 @@ ls (arg)   -> List the directory contents of arg.\n\
 cat (arg)  -> Write the content of arg to screen (text files only).\n\
 download (arg) -> Download arg (archive files only).\n";
 
+downloadTotalGains.parent = totalGains;
+downloadDriver.parent = autoDriver;
 downloadAtWar.parent = atWar;
+descriptionTotalGains.parent = totalGains;
+descriptionDriver.parent = autoDriver;
 descriptionAtWar.parent = atWar;
 atWar.parent = projects;
 home.parent = root;
