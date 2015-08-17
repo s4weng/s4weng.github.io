@@ -27,8 +27,8 @@ var descriptionTotalGains = {
 	name: "Description.txt",
 	type: "text",
 	children: [root],
-	text: "\n
-	TotalGains uses a weightlifter's max numbers to find weaknesses, and uses\n
+	text: "\n\
+	TotalGains uses a weightlifter's max numbers to find weaknesses, and uses\n\
 	that weakness with Prilepin's chart to create an optimal rep/set scheme.\n"
 };
 
@@ -37,8 +37,8 @@ var descriptionDriver = {
 	name: "Description.txt",
 	type: "text",
 	children: [root],
-	text: "\n
-	GTR 2 Autonomous Driver's name gives it all away; using an artificial neural network\n
+	text: "\n\
+	GTR 2 Autonomous Driver's name gives it all away; using an artificial neural network\n\
 	I trained, the computer will drive a racecar around the track in GTR 2.\n"
 };
 
@@ -47,7 +47,7 @@ var descriptionAtWar = {
 	name: "Description.txt",
 	type: "text",
 	children: [root],
-	text: "\n
+	text: "\n\
 	At War is a pseudo-3D fantasy beat 'em up game I developed in C++.\n"
 };
 
