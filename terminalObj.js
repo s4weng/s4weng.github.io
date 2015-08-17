@@ -79,7 +79,7 @@ var home = {
 
 	name: "Home",
 	type: "directory",
-	children: [downloadAtWar],
+	children: [root],
 	prompt: "guest@SteveWeng:~/Home$"
 };
 
@@ -87,7 +87,7 @@ var posts = {
 
 	name: "Posts",
 	type: "directory",
-	children: [downloadAtWar],
+	children: [root],
 	prompt: "guest@SteveWeng:~/Posts$"
 };
 
@@ -95,7 +95,7 @@ var projects = {
 
 	name: "Projects",
 	type: "directory",
-	children: [atWar],
+	children: [atWar, autoDriver, totalGains],
 	prompt: "guest@SteveWeng:~/Projects$"
 };
 
